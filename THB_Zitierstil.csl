@@ -11,7 +11,7 @@
     </author>
     <category citation-format="note"/>
     <category field="science"/>
-    <updated>2022-04-25T14:59:19+00:00</updated>
+    <updated>2022-04-26T14:59:19+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <locale xml:lang="de">
@@ -139,16 +139,6 @@
       <text variable="locator"/>
     </group>
   </macro>
-  <macro name="hasUrl">
-    <choose>
-      <if variable="URL" match="any">
-        <text value="yes"/>
-      </if>
-      <else>
-        <text value="no"/>
-      </else>
-    </choose>
-  </macro>
   <citation et-al-min="3" et-al-use-first="1" disambiguate-add-year-suffix="true">
     <layout delimiter="; " suffix=".">
       <choose>
@@ -225,7 +215,6 @@
   </citation>
   <bibliography et-al-min="3" et-al-use-first="1" hanging-indent="true">
     <sort>
-      <key macro="hasUrl"/>
       <key macro="author_bibliography"/>
       <key macro="date"/>
     </sort>
