@@ -11,7 +11,7 @@
     </author>
     <category citation-format="note"/>
     <category field="science"/>
-    <updated>2022-04-26T14:59:19+00:00</updated>
+    <updated>2022-05-05T14:59:19+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <locale xml:lang="de">
@@ -27,6 +27,11 @@
       <term name="editor" form="short">(Hrsg.)</term>
     </terms>
   </locale>
+  
+  <macro name="no_author">
+    <text value="o.V."/>
+  </macro>
+  
   <macro name="author_cite">
     <names variable="author">
       <name and="text" name-as-sort-order="all" sort-separator=", " delimiter=", " delimiter-precedes-last="never" initialize-with="."/>
@@ -34,6 +39,7 @@
       <substitute>
         <names variable="editor"/>
         <names variable="translator"/>
+        <text macro="no_author"/>
       </substitute>
     </names>
   </macro>
@@ -44,6 +50,7 @@
       <substitute>
         <names variable="editor"/>
         <names variable="translator"/>
+        <text macro="no_author"/>
       </substitute>
     </names>
   </macro>
