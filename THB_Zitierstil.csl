@@ -31,6 +31,10 @@
   <macro name="no_author">
     <text value="o.V."/>
   </macro>
+  <macro name="no_date">
+    <text value="o.J."/>
+  </macro>
+  
   
   <macro name="author_cite">
     <names variable="author">
@@ -68,6 +72,7 @@
       <date-part form="long" name="year"/>
     </date>
   </macro>
+  
   <macro name="date">
     <choose>
       <if variable="issued">
@@ -78,14 +83,11 @@
         </date>
       </if>
       <else>
-        <date variable="accessed">
-          <date-part form="numeric-leading-zeros" name="day" suffix="."/>
-          <date-part form="numeric-leading-zeros" name="month" suffix="."/>
-          <date-part form="long" name="year"/>
-        </date>
+        <text macro="no_date"/>
       </else>
     </choose>
   </macro>
+  
   <macro name="year-date">
     <choose>
       <if type="webpage">
@@ -96,9 +98,7 @@
             </date>
           </if>
           <else>
-            <date variable="accessed">
-              <date-part name="year"/>
-            </date>
+            <text macro="no_date"/>
           </else>
         </choose>
       </if>
