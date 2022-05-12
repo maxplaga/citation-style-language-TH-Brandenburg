@@ -11,7 +11,7 @@
     </author>
     <category citation-format="note"/>
     <category field="science"/>
-    <updated>2022-05-05T14:59:19+00:00</updated>
+    <updated>2022-05-12T14:59:19+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <locale xml:lang="de">
@@ -33,6 +33,9 @@
   </macro>
   <macro name="no_date">
     <text value="o.J."/>
+  </macro>
+  <macro name="no_publisher-place">
+    <text value="o. O."/>
   </macro>
   
   
@@ -64,6 +67,18 @@
       <label form="short" prefix=" " strip-periods="true"/>
     </names>
   </macro>
+  
+  <macro name="publisher-place">    
+    <choose>
+      <if variable="publisher-place">
+        <text variable="publisher-place"/>
+      </if>
+      <else>
+        <text macro="no_publisher-place"/>
+      </else>
+    </choose>
+  </macro>
+  
   <macro name="accessed">
     <text term="accessed"/>
     <date variable="accessed" prefix=" ">
@@ -146,6 +161,7 @@
       <text variable="locator"/>
     </group>
   </macro>
+  
   <citation et-al-min="3" et-al-use-first="1" disambiguate-add-year-suffix="true">
     <layout delimiter="; " suffix=".">
       <choose>
@@ -161,7 +177,7 @@
             </if>
             <else-if type="speech" match="any">
               <text variable="publisher" prefix=", "/>
-              <text variable="publisher-place" prefix=", "/>
+              <text macro="publisher-place" prefix=", "/>
               <text macro="date" prefix=", "/>
               <text macro="accessed" prefix=", "/>
             </else-if>
@@ -178,14 +194,14 @@
               <text macro="editor" prefix=", in: " suffix=": "/>
               <text variable="container-title" font-style="italic"/>
               <text variable="publisher" prefix=", "/>
-              <text variable="publisher-place" prefix=", "/>
+              <text macro="publisher-place" prefix=", "/>
               <text variable="edition" prefix=", "/>
               <text macro="year-date" prefix=", "/>
               <text macro="pages"/>
             </else-if>
             <else>
               <text variable="publisher" prefix=", "/>
-              <text variable="publisher-place" prefix=", "/>
+              <text macro="publisher-place" prefix=", "/>
               <text variable="edition" prefix=", "/>
               <text macro="year-date" prefix=", "/>
             </else>
@@ -203,8 +219,6 @@
               </choose>
             </if>
           </choose>
-          <text variable="ISBN" prefix=", ISBN: "/>
-          <text variable="DOI" prefix=", DOI: "/>
           <text variable="note" prefix=", "/>
           <text macro="point-locators"/>
         </if>
@@ -220,6 +234,8 @@
       </choose>
     </layout>
   </citation>
+  
+  
   <bibliography et-al-min="3" et-al-use-first="1" hanging-indent="true">
     <sort>
       <key macro="author_bibliography"/>
@@ -237,7 +253,7 @@
         </if>
         <else-if type="speech" match="any">
           <text variable="publisher" prefix=", "/>
-          <text variable="publisher-place" prefix=", "/>
+          <text macro="publisher-place" prefix=", "/>
           <text macro="date" prefix=", "/>
           <text macro="accessed" prefix=", "/>
         </else-if>
@@ -254,14 +270,14 @@
           <text macro="editor" prefix=", in: " suffix=": "/>
           <text variable="container-title" font-style="italic"/>
           <text variable="publisher" prefix=", "/>
-          <text variable="publisher-place" prefix=", "/>
+          <text macro="publisher-place" prefix=", "/>
           <text variable="edition" prefix=", "/>
           <text macro="year-date" prefix=", "/>
           <text macro="pages"/>
         </else-if>
         <else>
           <text variable="publisher" prefix=", "/>
-          <text variable="publisher-place" prefix=", "/>
+          <text macro="publisher-place" prefix=", "/>
           <text variable="edition" prefix=", "/>
           <text macro="year-date" prefix=", "/>
         </else>
