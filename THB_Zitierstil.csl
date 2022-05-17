@@ -11,7 +11,7 @@
     </author>
     <category citation-format="note"/>
     <category field="science"/>
-    <updated>2022-05-12T14:59:19+00:00</updated>
+    <updated>2022-05-17T13:45:00+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <locale xml:lang="de">
@@ -128,10 +128,12 @@
     <label variable="locator" form="short" prefix=", " suffix=" "/>
     <text variable="page"/>
   </macro>
+
   <macro name="point-locators">
     <label variable="locator" form="short" prefix=", " suffix=" "/>
-    <text variable="locator"/>
+    <text variable="locator"/>    
   </macro>
+
   <macro name="point-locators-subsequent">
     <group>
       <choose>
@@ -160,6 +162,18 @@
       <label variable="locator" form="short" suffix=" "/>
       <text variable="locator"/>
     </group>
+  </macro>
+  
+  <macro name="point-locators-first">
+    <choose>
+      <if variable="page">
+        <label variable="locator" form="short" prefix=", hier " suffix=" "/>
+      </if>
+      <else>
+        <label variable="locator" form="short" prefix=", " suffix=" "/>
+      </else>
+    </choose>
+    <text variable="locator"/>    
   </macro>
   
   <citation et-al-min="3" et-al-use-first="1" disambiguate-add-year-suffix="true">
@@ -220,7 +234,7 @@
             </if>
           </choose>
           <text variable="note" prefix=", "/>
-          <text macro="point-locators"/>
+          <text macro="point-locators-first"/>
         </if>
         <else-if position="ibid">
           <text term="ibid" text-case="capitalize-first"/>
