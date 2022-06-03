@@ -233,13 +233,13 @@
               </choose>
             </if>
           </choose>
-          <text variable="note" prefix=", "/>
+          <!-- <text variable="note" prefix=", "/> "extra" field in Zotero -->
           <text macro="point-locators-first"/>
         </if>
-        <else-if position="ibid">
+        <!-- <else-if position="ibid">
           <text term="ibid" text-case="capitalize-first"/>
           <text macro="point-locators-subsequent" prefix=", "/>
-        </else-if>
+        </else-if> -->
         <else>
           <text macro="author_cite"/>
           <text macro="year-date" prefix=", " suffix=""/>
@@ -311,7 +311,7 @@
       </choose>
       <text variable="ISBN" prefix=", ISBN: "/>
       <text variable="DOI" prefix=", DOI: "/>
-      <text variable="note" prefix=", "/>
+      <!-- <text variable="note" prefix=", "/> "extra" field in Zotero -->
     </layout>
   </bibliography>
 </style>
