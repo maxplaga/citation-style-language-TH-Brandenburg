@@ -280,8 +280,8 @@
           <text macro="pages"/>
         </else-if>
         <else-if type="chapter paper-conference" match="any">
-          <text macro="editor" prefix=", in: " suffix=": "/>
-          <text variable="container-title" font-style="italic"/>
+          <text macro="editor"/>
+          <text variable="container-title" prefix=", In: " font-style="italic"/>
           <text variable="publisher" prefix=", "/>
           <text macro="publisher-place" prefix=", "/>
           <text variable="edition" prefix=", "/>
