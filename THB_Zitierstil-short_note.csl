@@ -11,7 +11,7 @@
     </author>
     <category citation-format="note"/>
     <category field="science"/>
-    <updated>2022-08-26T11:14:00+00:00</updated>
+    <updated>2022-09-14T11:14:00+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <locale xml:lang="de">
@@ -23,8 +23,8 @@
       <term name="ibid">ebenda</term>
       <term name="page" form="short">S.</term>
       <term name="section" form="short">Abs.</term>
-      <term name="editor" form="verb-short">hrsg. von</term>
-      <term name="editor" form="short">(Hrsg.)</term>
+      <term name="editor" form="verb-short"> hrsg. von </term>
+      <term name="editor" form="short"> (Hrsg.)</term>
     </terms>
   </locale>
   
@@ -199,6 +199,8 @@
       <choose>
         <if type="webpage">
           <text macro="date" prefix=", "/>
+          <!-- <text macro="website-title" prefix=", "/> -->
+          <!-- FIXME: "website-title" is not the correct name but would be nice to include it  -->
         </if>
         <else-if type="speech" match="any">
           <text variable="publisher" prefix=", "/>
@@ -207,7 +209,7 @@
           <text macro="accessed" prefix=", "/>
         </else-if>
         <else-if type="article-newspaper article-magazine article-journal" match="any">
-          <text value=" In: "/>
+          <text value=". In: "/>
           <text variable="container-title" font-style="italic"/>
           <text variable="collection-title" prefix=", Reihe "/>
           <text variable="volume" prefix=", Band "/>
@@ -216,8 +218,9 @@
           <text macro="pages"/>
         </else-if>
         <else-if type="chapter paper-conference" match="any">
-          <text macro="editor" suffix=""/>
-          <text variable="container-title" prefix=", In: " font-style="italic"/>
+         <text value=". In: "/>
+          <text macro="editor"/>
+          <text variable="container-title" prefix=": " font-style="italic"/>
           <text variable="publisher" prefix=", "/>
           <text macro="publisher-place" prefix=", "/>
           <text variable="edition" prefix=", "/>
