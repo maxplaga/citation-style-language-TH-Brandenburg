@@ -11,7 +11,7 @@
     </author>
     <category citation-format="note"/>
     <category field="science"/>
-    <updated>2022-09-14T11:14:00+00:00</updated>
+    <updated>2022-10-24T11:14:00+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <locale xml:lang="de">
@@ -220,7 +220,7 @@
         <else-if type="chapter paper-conference" match="any">
          <text value=". In: "/>
           <text macro="editor"/>
-          <text variable="container-title" prefix=": " font-style="italic"/>
+          <text variable="container-title" prefix="" font-style="italic"/>
           <text variable="publisher" prefix=", "/>
           <text macro="publisher-place" prefix=", "/>
           <text variable="edition" prefix=", "/>
